@@ -39,8 +39,8 @@ Just **install** it into a brand new Laravel application or an existing one and 
 
 **Eventmie Pro Version** comes with **Commercial** license. Pro version is fully loaded with a lot of useful and exciting features.
 
-+ [Live](https://eventmie-pro.classiebit.com) - Coming soon.
-+ [Purchase](https://classiebit.com/eventmie-pro) - Subscribe now for notifications, will be soon available for Purchase here
++ [Live](https://eventmie-pro.classiebit.com) - Live preview available now.
++ [Purchase](https://classiebit.com/eventmie-pro) - Available for purchase now - Flat 50% Off (limited time offer)
 
 ---
 
@@ -51,9 +51,10 @@ Eventmie can be installed via composer. Easy... 🍻
 
 ## Prerequisites
 
-* Laravel version 5.5 / 5.6 / 5.7 / 5.8
+* Laravel version 5.5 / 5.6 / 5.7 / 5.8 / 6.x
 * Make sure to install Eventmie package on a **Fresh** or **Existing** Laravel application. 
 * We also assume that you've setup the database.
+* If you're running MySql version older than < 5.7 then disable strict mode in Laravel `config/database.php` `'strict' => false`
 
 
 ## Install
@@ -62,8 +63,22 @@ Eventmie can be installed via composer. Easy... 🍻
 
     if installing Eventmie on **Fresh Laravel application** then run 
 
+    **For Laravel 5.5 to 5.8**
+
     ```php
     php artisan make:auth
+
+    php artisan migrate
+    ```
+
+    **For Laravel 6.x**
+
+    ```php
+    composer require laravel/ui --dev
+
+    php artisan ui vue --auth
+
+    npm install && npm run dev
 
     php artisan migrate
     ```
